@@ -116,7 +116,7 @@
         <!-- Floating stats -->
         <div class="hero-stats reveal-up" style="--d:0.9s">
             <div class="stat-item">
-                <span class="stat-num" data-target="12">0</span>
+                <span class="stat-num" data-target="18">0</span>
                 <span class="stat-label">Proyectos<br>Entregados</span>
             </div>
             <div class="stat-divider"></div>
@@ -221,6 +221,78 @@
                     </div>
                 </div>
             </div>
+
+            <!-- PROJECT 4 -->
+            <div class="project-card reveal-up modal-trigger" data-target="modal-futstreet" style="--d:0.4s" data-sound="click">
+                <div class="project-thumb" style="background-image: url('assets/projects/futstreet/futstreet1.png');">
+                    <div class="project-thumb-overlay"></div>
+                    <span class="project-num">04</span>
+                </div>
+                <div class="project-card-info">
+                    <span class="tag">Game Development</span>
+                    <h3>Futstreet Arcade</h3>
+                    <p>Prototipo de fútbol callejero 2D con motor de físicas, sistema de trucos y combos arcade inspirado en clásicos del género.</p>
+                    <div class="card-footer">
+                        <span class="card-tech">Unity · C# · HTML5</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PROJECT 5 -->
+            <div class="project-card reveal-up modal-trigger" data-target="modal-pocketai" style="--d:0.5s" data-sound="click">
+                <div class="project-thumb" style="background-image: url('assets/projects/pocketai/pocketai1.png');">
+                    <div class="project-thumb-overlay"></div>
+                    <span class="project-num">05</span>
+                </div>
+                <div class="project-card-info">
+                    <span class="tag">UX/UI & Gamificación</span>
+                    <h3>Pocket AI App</h3>
+                    <p>Rediseño gamificado tipo Duolingo para curso de IA móvil. Seguimiento dinámico de progreso e interfaz flat design.</p>
+                    <div class="card-footer">
+                        <span class="card-tech">Frontend · UI/UX</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PROJECT 6 -->
+            <div class="project-card reveal-up modal-trigger" data-target="modal-poker" style="--d:0.6s" data-sound="click">
+                <div class="project-thumb" style="background-image: url('assets/projects/poker/poker1.png');">
+                    <div class="project-thumb-overlay"></div>
+                    <span class="project-num">06</span>
+                </div>
+                <div class="project-card-info">
+                    <span class="tag">Game UI Engine</span>
+                    <h3>Western Poker Game</h3>
+                    <p>Motor de póker interactivo con estética "Western Luxury". Animaciones 3D de cartas y arquitectura CSS premium.</p>
+                    <div class="card-footer">
+                        <span class="card-tech">CSS3 · JavaScript</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PROJECT 7 -->
+            <div class="project-card reveal-up modal-trigger" data-target="modal-jabones" style="--d:0.7s" data-sound="click">
+                <div class="project-thumb" style="background-image: url('assets/projects/jabones/jabones1.jpg');">
+                    <div class="project-thumb-overlay"></div>
+                    <span class="project-num">07</span>
+                </div>
+                <div class="project-card-info">
+                    <span class="tag">Automation</span>
+                    <h3>Jabones con Historia</h3>
+                    <p>Automatización de pipeline de assets en Python. Redimensionamiento masivo de imágenes y arquitectura de lanzamiento.</p>
+                    <div class="card-footer">
+                        <span class="card-tech">Python · Automation</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -235,6 +307,7 @@
         </div>
         <div id="dynamic-photobook-cards" class="projects-grid"></div>
     </section>
+
 
     <!-- ═══════════════════════════════════════ -->
     <!-- CV                                     -->
@@ -468,6 +541,96 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal: Futstreet -->
+    <div class="modal" id="modal-futstreet">
+        <div class="modal-content">
+            <button class="close-modal" data-sound="click">&times;</button>
+            <div class="modal-header">
+                <span class="tag">Game Development</span>
+                <h3>Futstreet Arcade</h3>
+                <p>Prototipo jugable de fútbol callejero con motor de físicas C# y web.</p>
+            </div>
+            <div class="modal-body">
+                <ul class="modal-details">
+                    <li><span>El Proyecto</span>AntiGravity Street Engine es un motor arquitectónico para juegos deportivos 2D inspirado en clásicos como FIFA Street, con mecánicas de regates, combos y físicas fluidas.</li>
+                    <li><span>Tecnología</span>Unity · C# · HTML5 Export</li>
+                </ul>
+                <div class="modal-gallery" data-gallery="futstreet">
+                    <div class="gallery-item"><img src="assets/projects/futstreet/futstreet1.png" alt="Futstreet Gameplay" data-title="Gameplay Base" data-desc="Prototipo de movimiento y físicas de la pelota."><div class="zoom-icon">⤢</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Pocket AI -->
+    <div class="modal" id="modal-pocketai">
+        <div class="modal-content">
+            <button class="close-modal" data-sound="click">&times;</button>
+            <div class="modal-header">
+                <span class="tag">UX/UI & Gamificación</span>
+                <h3>Pocket AI App</h3>
+                <p>Plataforma educativa móvil con diseño flat gamificado.</p>
+            </div>
+            <div class="modal-body">
+                <ul class="modal-details">
+                    <li><span>El Proyecto</span>Evolución visual y de UX de "IA desde tu celular" a "Pocket AI". Se diseñó una experiencia de usuario orientada a recompensas visuales, modales de progreso y barras dinámicas al estilo Duolingo.</li>
+                    <li><span>Tecnología</span>HTML5 · CSS3 Avanzado · JavaScript</li>
+                </ul>
+                <div class="modal-gallery" data-gallery="pocketai">
+                    <div class="gallery-item"><img src="assets/projects/pocketai/pocketai1.png" alt="Pocket AI Interfaz" data-title="Interfaz Gamificada" data-desc="Pantalla de inicio con módulos estilo árbol de habilidades."><div class="zoom-icon">⤢</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Western Poker -->
+    <div class="modal" id="modal-poker">
+        <div class="modal-content">
+            <button class="close-modal" data-sound="click">&times;</button>
+            <div class="modal-header">
+                <span class="tag">Game UI Engine</span>
+                <h3>Western Poker Game</h3>
+                <p>Experiencia de juego "Governor of Poker" con interacciones CSS3 3D.</p>
+            </div>
+            <div class="modal-body">
+                <ul class="modal-details">
+                    <li><span>El Proyecto</span>Diseño UI/UX inmersivo de un motor de póker con temática "Western Luxury", aplicando texturas de cuero, metales pulidos, bordes biselados y animaciones espaciales en las cartas.</li>
+                    <li><span>Tecnología</span>Arquitectura CSS3 · Transformaciones 3D · Vanilla JS</li>
+                </ul>
+                <div class="modal-gallery" data-gallery="poker">
+                    <div class="gallery-item"><img src="assets/projects/poker/poker1.png" alt="Poker Mesa" data-title="Mesa de Poker" data-desc="Mesa premium con texturas realistas y botones con biselado interactivo."><div class="zoom-icon">⤢</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Jabones -->
+    <div class="modal" id="modal-jabones">
+        <div class="modal-content">
+            <button class="close-modal" data-sound="click">&times;</button>
+            <div class="modal-header">
+                <span class="tag">Automation</span>
+                <h3>Jabones con Historia</h3>
+                <p>Pipeline de automatización de assets para lanzamiento de producto.</p>
+            </div>
+            <div class="modal-body">
+                <ul class="modal-details">
+                    <li><span>El Proyecto</span>Desarrollo de scripts en Python (organize_photos.py, make_videos.py) para el formateo de cientos de imágenes, garantizando la proporción y el empaquetado ideal para las redes sociales durante el periodo de lanzamiento.</li>
+                    <li><span>Tecnología</span>Python · OS Modules · Image Processing</li>
+                </ul>
+                <div class="modal-gallery" data-gallery="jabones">
+                    <div class="gallery-item"><img src="assets/projects/jabones/jabones1.jpg" alt="Jabones Assets 1" data-title="Jabón Artesanal" data-desc="Imágenes base procesadas para redes sociales."><div class="zoom-icon">⤢</div></div>
+                    <div class="gallery-item"><img src="assets/projects/jabones/jabones2.jpg" alt="Jabones Assets 2" data-title="Jabón Textura" data-desc="Detalle de los ingredientes naturales."><div class="zoom-icon">⤢</div></div>
+                    <div class="gallery-item"><img src="assets/projects/jabones/jabones3.jpg" alt="Jabones Assets 3" data-title="Jabón Miel" data-desc="Variante premium de miel artesanal."><div class="zoom-icon">⤢</div></div>
+                    <div class="gallery-item"><img src="assets/projects/jabones/jabones4.jpg" alt="Jabones Assets 4" data-title="Jabón Cuidado" data-desc="Producto de cuidado de la piel."><div class="zoom-icon">⤢</div></div>
+                    <div class="gallery-item"><img src="assets/projects/jabones/jabones_logo.jpg" alt="Jabones Logo" data-title="Identidad de Marca" data-desc="Logotipo de la marca adaptado para el lanzamiento."><div class="zoom-icon">⤢</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Dynamic photobook modals -->
     <div id="dynamic-modals-container"></div>
