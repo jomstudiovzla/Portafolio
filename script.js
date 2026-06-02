@@ -691,7 +691,14 @@ const photobookData = [
                 file: "Yo/quiero_que_la_202604171825 (1).png",
                 title: "Distrito Neón",
                 desc: "Retrato nocturno urbano con luces de neón azules, rojas y amarillas al fondo. El bokeh envuelve la escena en color mientras Jesus, de negro con su pin de caballito de mar, observa hacia arriba con serenidad. Una imagen que mezcla lo íntimo con lo urbano."
-            },
+            }
+        ]
+    },
+    {
+        id: "sesion-5",
+        title: "Sesión V: Retratos & Edición",
+        desc: "Galería exclusiva de retratos seleccionados y editados de Jesús Omar Martínez. Capturas de alta definición, iluminación cuidada y atmósferas íntimas creadas en post-producción.",
+        images: [
             {
                 file: "Yo/yo_post_1.jpeg",
                 title: "Conexión Digital",
