@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.0.4">
+    <link rel="stylesheet" href="style.css?v=1.1.0">
 </head>
 <body>
 
@@ -38,12 +38,37 @@
                 <img src="assets/logo_jom.png" alt="JOM STUDIO" onerror="this.style.display='none'"> JOM
             </a>
             <ul class="nav-links">
-                <li><a href="#projects" class="nav-link" data-sound="click">Proyectos</a></li>
-                <li><a href="#photobook" class="nav-link" data-sound="click">Photobook</a></li>
-                <li><a href="#cv" class="nav-link" data-sound="click">C.V.</a></li>
-                <li><a href="#about" class="nav-link" data-sound="click">Sobre mí</a></li>
-                <li><a href="#contact" class="btn btn-nav magnetic" data-sound="hover">Contactar</a></li>
+                <li><a href="#projects" class="nav-link" data-sound="click" data-i18n="nav_projects">Proyectos</a></li>
+                <li><a href="#photobook" class="nav-link" data-sound="click" data-i18n="nav_photobook">Photobook</a></li>
+                <li><a href="#cv" class="nav-link" data-sound="click" data-i18n="nav_cv">C.V.</a></li>
+                <li><a href="#about" class="nav-link" data-sound="click" data-i18n="nav_about">Sobre mí</a></li>
+                <li><a href="#contact" class="btn btn-nav magnetic" data-sound="hover" data-i18n="nav_contact">Contactar</a></li>
             </ul>
+            <!-- Language Selector -->
+            <div class="lang-selector" id="lang-selector">
+                <button class="lang-btn" id="lang-btn" aria-label="Cambiar idioma" title="Language / Idioma / Langue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+                    <span id="lang-current">ES</span>
+                    <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <button class="lang-option active" data-lang="es">
+                        <span class="lang-flag">🇪🇸</span> <span>Español</span>
+                    </button>
+                    <button class="lang-option" data-lang="en">
+                        <span class="lang-flag">🇺🇸</span> <span>English</span>
+                    </button>
+                    <button class="lang-option" data-lang="fr">
+                        <span class="lang-flag">🇫🇷</span> <span>Français</span>
+                    </button>
+                    <button class="lang-option" data-lang="pt">
+                        <span class="lang-flag">🇧🇷</span> <span>Português</span>
+                    </button>
+                    <button class="lang-option" data-lang="auto">
+                        <span class="lang-flag">🌐</span> <span>Auto</span>
+                    </button>
+                </div>
+            </div>
             <button class="nav-burger" id="nav-burger" aria-label="Menú">
                 <span></span><span></span><span></span>
             </button>
@@ -116,18 +141,18 @@
         <!-- Floating stats -->
         <div class="hero-stats reveal-up" style="--d:0.9s">
             <div class="stat-item">
-                <span class="stat-num" data-target="26">0</span>
-                <span class="stat-label">Proyectos<br>Entregados</span>
+                <span class="stat-num" data-target="32">0</span>
+                <span class="stat-label" data-i18n="stat_projects">Proyectos<br>Entregados</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-                <span class="stat-num" data-target="4">0</span>
-                <span class="stat-label">Clientes<br>Activos</span>
+                <span class="stat-num" data-target="6">0</span>
+                <span class="stat-label" data-i18n="stat_clients">Clientes<br>Activos</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
                 <span class="stat-num" data-target="3">0</span>
-                <span class="stat-label">Años de<br>Experiencia</span>
+                <span class="stat-label" data-i18n="stat_years">Años de<br>Experiencia</span>
             </div>
         </div>
     </section>
@@ -436,6 +461,75 @@
                     <p>Ecosistema inmobiliario completo tipo Century 21 / Zillow con catálogo interactivo, filtros de búsqueda avanzados mediante Meilisearch, tours virtuales 3D y agendado de visitas automatizado.</p>
                     <div class="card-footer">
                         <span class="card-tech">Next.js · Node.js · PostgreSQL · APIs</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 16: Mi Negocio / Ananas -->
+            <div class="project-card reveal-up modal-trigger" data-target="modal-minegocio" style="--d:1.6s" data-sound="click">
+                <div class="project-thumb" style="background-image: url('assets/projects/minegocio/minegocio_inventory.png');">
+                    <div class="project-thumb-overlay"></div>
+                    <span class="project-num">16</span>
+                </div>
+                <div class="project-card-info">
+                    <span class="tag">E-Commerce · Full-Stack</span>
+                    <h3>Mi Negocio / Ananas 🍍</h3>
+                    <p>Plataforma de supermercado online completa: inventario inteligente, panel de usuario, carrito, historial de pedidos, múltiples páginas y pipeline RPA de extracción automática de productos de supermercado.</p>
+                    <div class="card-footer">
+                        <span class="card-tech">Next.js · Python RPA · PostgreSQL</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 17: Chrome Extensions Pack -->
+            <div class="project-card reveal-up modal-trigger" data-target="modal-extensions" style="--d:1.7s" data-sound="click">
+                <div class="project-thumb" style="background-image: url('assets/projects/extensions/ext_suite.png');">
+                    <div class="project-thumb-overlay"></div>
+                    <span class="project-num">17</span>
+                </div>
+                <div class="project-card-info">
+                    <span class="tag">Chrome Extensions · Manifest V3</span>
+                    <h3>Suite de Extensiones Chrome</h3>
+                    <p>3 extensiones para Chrome: VidSnap (descarga videos de YouTube/TikTok/Instagram), Web Asset Extractor Pro (extrae imágenes, colores y fuentes de cualquier web) y Lector TTS Inteligente multiidioma.</p>
+                    <div class="card-footer">
+                        <span class="card-tech">MV3 · Service Workers · Web Speech API</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 19: Supermarket — RPA Inventory Pipeline -->
+            <div class="project-card reveal-up modal-trigger" data-target="modal-plazas" style="--d:1.9s" data-sound="click">
+                <div class="project-thumb" style="background-image: url('assets/projects/plazas/plazas_rpa.png');">
+                    <div class="project-thumb-overlay"></div>
+                    <span class="project-num">19</span>
+                </div>
+                <div class="project-card-info">
+                    <span class="tag">Data Engineering · Python RPA</span>
+                    <h3>Supermarket — Pipeline RPA de Inventario</h3>
+                    <p>Pipeline automatizado de extracción, procesamiento y sincronización de inventario de supermercado online. Descarga, redimensiona y embede imágenes de productos directamente en Excel con operaciones upsert inteligentes.</p>
+                    <div class="card-footer">
+                        <span class="card-tech">Python · Selenium · openpyxl · Pillow</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 18: JOM Cemetery — Graveyard Game -->
+            <div class="project-card reveal-up modal-trigger" data-target="modal-cemetery" style="--d:1.8s" data-sound="click">
+                <div class="project-thumb" style="background-image: url('assets/projects/cemetery/cemetery1.png');">
+                    <div class="project-thumb-overlay"></div>
+                    <span class="project-num">18</span>
+                    <span class="project-badge" style="position:absolute;top:12px;left:12px;background:rgba(46,196,182,0.18);border:1px solid rgba(46,196,182,0.5);color:#2EC4B6;font-size:0.6rem;letter-spacing:0.15em;padding:3px 8px;font-family:monospace;text-transform:uppercase;">EN DESARROLLO</span>
+                </div>
+                <div class="project-card-info">
+                    <span class="tag">Game Development · Unity · C#</span>
+                    <h3>JOM Cemetery — Graveyard Engine</h3>
+                    <p>Motor de videojuego top-down 2D inspirado en Graveyard Keeper. Sistema completo: inventario, gestión de cementerio, tumbas, NPCs con diálogos, crafteo, energía/stamina, economía, combate básico y guardado persistente.</p>
+                    <div class="card-footer">
+                        <span class="card-tech">Unity · C# · Aseprite · Tiled</span>
                         <span class="card-arrow">→</span>
                     </div>
                 </div>
@@ -982,6 +1076,104 @@
         </div>
     </div>
 
+    <!-- Modal: Mi Negocio / Ananas -->
+    <div class="modal" id="modal-minegocio">
+        <div class="modal-content">
+            <button class="close-modal" data-sound="click">&times;</button>
+            <div class="modal-header">
+                <span class="tag">E-Commerce · Full-Stack · RPA</span>
+                <h3>Mi Negocio / Ananas 🍍</h3>
+                <p>Ecosistema de supermercado online con inventario inteligente, RPA de extracción de productos y experiencia de usuario premium.</p>
+            </div>
+            <div class="modal-body">
+                <ul class="modal-details">
+                    <li><span>El Proyecto</span>Plataforma e-commerce de supermercado completa inspirada en los líderes de la industria. Incluye catálogo de productos con categorías, buscador en tiempo real, carrito de compras, proceso de checkout, gestión de cuenta de usuario con historial de pedidos y puntos de fidelidad.</li>
+                    <li><span>Pipeline RPA</span>Script Python que extrae automáticamente productos (nombre, descripción, precio, imágenes) de vallearriba.elplazas.com mediante web scraping, redimensiona imágenes y realiza operaciones upsert inteligentes en el inventario Excel local, con sistema de log de errores para imágenes rotas.</li>
+                    <li><span>Panel Admin</span>Dashboard de inventario con tabla de productos en tiempo real, indicadores de stock (disponible/bajo stock/agotado), estadísticas clave y gestión CRUD completa.</li>
+                    <li><span>Tecnología</span>Next.js · React · Python (BeautifulSoup, openpyxl, Pillow) · PostgreSQL · Tailwind CSS · RPA Scraper</li>
+                </ul>
+                <div class="modal-gallery" data-gallery="minegocio">
+                    <div class="gallery-item"><img src="assets/projects/minegocio/minegocio_home.png" alt="Página Principal" data-title="Página Principal — Ananas" data-desc="Vista del home con categorías, productos destacados y banner de promociones. Interfaz en dark mode con acento verde esmeralda."><div class="zoom-icon">⤢</div></div>
+                    <div class="gallery-item"><img src="assets/projects/minegocio/minegocio_account.png" alt="Cuenta de Usuario" data-title="Panel de Usuario — Mi Cuenta" data-desc="Panel de cuenta premium: historial de pedidos, puntos de fidelidad, direcciones y métodos de pago. Badge 'Cliente Premium' con acciones rápidas."><div class="zoom-icon">⤢</div></div>
+                    <div class="gallery-item"><img src="assets/projects/minegocio/minegocio_inventory.png" alt="Panel de Inventario" data-title="Dashboard de Inventario Admin" data-desc="Panel administrativo con tabla de inventario completa: 847 productos, indicadores de stock en colores, estadísticas clave y exportación."><div class="zoom-icon">⤢</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Chrome Extensions Pack -->
+    <div class="modal" id="modal-extensions">
+        <div class="modal-content">
+            <button class="close-modal" data-sound="click">&times;</button>
+            <div class="modal-header">
+                <span class="tag">Chrome Extensions · Manifest V3</span>
+                <h3>Suite de Extensiones Chrome</h3>
+                <p>Pack de herramientas de productividad para el navegador, desarrolladas con Manifest V3 y tecnologías web avanzadas.</p>
+            </div>
+            <div class="modal-body">
+                <ul class="modal-details">
+                    <li><span>VidSnap — Video Downloader</span>Descarga videos, audio e imágenes desde YouTube, TikTok, Instagram, X, Reddit, Vimeo y más sin necesidad de cuenta ni clave API. Soporta múltiples calidades (MP4 720p/1080p y MP3). Arquitectura basada en service worker Manifest V3 con fallback a múltiples instancias de Invidious.</li>
+                    <li><span>Web Asset Extractor Pro</span>Extrae cualquier recurso de una página web con un clic: videos, imágenes, colores del diseño y tipografías usadas. Permite descarga masiva ("Extraer Todo") o individual por recurso. Ideal para análisis de competencia y referencia de diseño.</li>
+                    <li><span>Lector de Voz Inteligente (TTS)</span>Lee cualquier texto seleccionado en voz alta con un solo clic. Soporte multiidioma (ES, EN, FR, PT, DE, IT), control de velocidad y tono, menú contextual integrado y reproductor con pausa/stop. Usa la Web Speech API nativa sin dependencias externas.</li>
+                    <li><span>Tecnología</span>Chrome Extensions Manifest V3 · Service Workers · Web Speech API · JavaScript ES6+ · CSS3 · chrome.tts · chrome.downloads · chrome.scripting</li>
+                </ul>
+                <div class="modal-gallery" data-gallery="extensions">
+                    <div class="gallery-item"><img src="assets/projects/extensions/ext_vidsnap.png" alt="VidSnap" data-title="VidSnap — Universal Video Downloader" data-desc="Descarga videos desde YouTube y 6+ plataformas más sin cuenta ni API key. Soporte MP4/MP3 en múltiples calidades."><div class="zoom-icon">⤢</div></div>
+                    <div class="gallery-item"><img src="assets/projects/extensions/ext_extractor.png" alt="Asset Extractor" data-title="Web Asset Extractor Pro" data-desc="Extrae todos los recursos de una web: videos, imágenes, colores detectados y fuentes usadas. Descarga masiva con un clic."><div class="zoom-icon">⤢</div></div>
+                    <div class="gallery-item"><img src="assets/projects/extensions/ext_tts.png" alt="Lector TTS" data-title="Lector de Voz Inteligente" data-desc="Lee cualquier texto seleccionado en voz alta. Control de velocidad, tono e idioma. Soporte ES/EN/FR/PT/DE/IT."><div class="zoom-icon">⤢</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Supermarket — Pipeline RPA de Inventario -->
+    <div class="modal" id="modal-plazas">
+        <div class="modal-content">
+            <button class="close-modal" data-sound="click">&times;</button>
+            <div class="modal-header">
+                <span class="tag">Data Engineering · Python RPA · Automatización</span>
+                <h3>Supermarket — Pipeline RPA de Inventario</h3>
+                <p>Sistema automatizado de extracción, procesamiento y sincronización de inventario para tu e-commerce.</p>
+            </div>
+            <div class="modal-body">
+                <ul class="modal-details">
+                    <li><span>El Problema</span>El cliente necesitaba sincronizar su inventario local con el catálogo de un supermercado (nombre, descripción, precio e imagen de cada producto) de forma automática, sin intervención manual, y con las imágenes físicamente embebidas en el Excel de inventario.</li>
+                    <li><span>Pipeline RPA</span>Script Python que navega el sitio web del supermercado, extrae todos los productos con sus metadatos (nombre, descripción, precio), descarga y redimensiona las imágenes de productos, y las inserta físicamente en las celdas del Excel. Opera en modo "upsert inteligente": si el producto ya existe lo actualiza, si es nuevo lo agrega, sin borrar datos existentes.</li>
+                    <li><span>Arquitectura</span>Módulo de scraping (Selenium/BeautifulSoup) → Módulo de descarga de imágenes (requests + Pillow para redimensionar a 80×80px) → Módulo de escritura Excel (openpyxl con imágenes embebidas mediante BytesIO) → Logger de errores para URLs de imagen rotas → Estructura de carpetas espejada local para cache de imágenes.</li>
+                    <li><span>Resultado</span>847 productos sincronizados. Tiempo de ejecución: ~12 minutos para catálogo completo. 0 errores críticos. Sistema de log con fecha/hora para auditoría. Excel final con imágenes físicamente embebidas, listo para uso sin internet.</li>
+                    <li><span>Tecnología</span>Python 3.11 · Selenium · BeautifulSoup4 · openpyxl · Pillow (PIL) · requests · BytesIO · logging · pathlib</li>
+                </ul>
+                <div class="modal-gallery" data-gallery="plazas">
+                    <div class="gallery-item"><img src="assets/projects/plazas/plazas_rpa.png" alt="Pipeline RPA Dashboard" data-title="Pipeline RPA — Dashboard de Inventario" data-desc="Vista del pipeline en ejecución: panel izquierdo mostrando el scraper navegando el supermercado, panel derecho con el Excel de inventario siendo actualizado con fotos de productos embebidas. Logs de estado en tiempo real."><div class="zoom-icon">⤢</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: JOM Cemetery — Graveyard Engine -->
+    <div class="modal" id="modal-cemetery">
+        <div class="modal-content">
+            <button class="close-modal" data-sound="click">&times;</button>
+            <div class="modal-header">
+                <span class="tag">Game Development · Unity · C#</span>
+                <h3>JOM Cemetery — Graveyard Engine</h3>
+                <p>Motor de videojuego top-down 2D inspirado en Graveyard Keeper. En desarrollo activo con GDD completo.</p>
+            </div>
+            <div class="modal-body">
+                <ul class="modal-details">
+                    <li><span>El Proyecto</span>Videojuego de gestión y exploración 2D con vista top-down, donde el jugador toma el rol de guardián de un cementerio abandonado. Sistema de juego completo con loop principal funcional: exploración, recolección, crafteo y gestión del cementerio.</li>
+                    <li><span>Sistemas Implementados</span>Movimiento top-down con colisiones · Cámara que sigue al jugador · Sistema de inventario con slots y stacking · Recolección de recursos (madera, piedra, metal) · Gestión de tumbas y cadáveres · NPCs con diálogos · Sistema de crafteo con estaciones de trabajo · Barra de energía/stamina · Guardado/carga de partida.</li>
+                    <li><span>Arquitectura</span>GDD completo documentado · Scripts: PlayerMovement, PlayerInteraction, InventorySystem, ItemData, CraftingSystem, CemeterySystem, DialogueSystem, QuestSystem, SaveSystem, UIManager · Sistema de tilesets y mapas con Tiled · Arte en pixel art con Aseprite.</li>
+                    <li><span>Estado Actual</span>Fase 2 (Prototipo) en progreso: movimiento ✅ · cámara ✅ · interacción básica en desarrollo · inventario en desarrollo · crafteo pendiente.</li>
+                    <li><span>Tecnología</span>Unity 6 · C# · Aseprite · Tiled · Git + GitHub</li>
+                </ul>
+                <div class="modal-gallery" data-gallery="cemetery">
+                    <div class="gallery-item"><img src="assets/projects/cemetery/cemetery1.png" alt="Cemetery Game Preview" data-title="JOM Cemetery — Concept Art" data-desc="Vista isométrica del cementerio con el guardián, tumbas, esqueletos y estación de crafteo. Atmósfera oscura con iluminación de linterna y luna."><div class="zoom-icon">⤢</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Dynamic photobook modals -->
     <div id="dynamic-modals-container"></div>
 
@@ -997,6 +1189,6 @@
         <div class="lb-counter" id="lb-counter"><span id="lb-cur">1</span> / <span id="lb-tot">1</span></div>
     </div>
 
-    <script src="script.js?v=1.0.4"></script>
+    <script src="script.js?v=1.1.0"></script>
 </body>
 </html>

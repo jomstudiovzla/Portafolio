@@ -883,3 +883,227 @@ if (cardsContainer && modalsContainer) {
 }
 
 })();
+
+/* ═══════════════════════════════════════════════
+   i18n — MULTI-LANGUAGE SYSTEM
+   Supports: ES · EN · FR · PT · Auto (device)
+═══════════════════════════════════════════════ */
+(function() {
+'use strict';
+
+const translations = {
+    es: {
+        nav_projects: 'Proyectos',
+        nav_photobook: 'Photobook',
+        nav_cv: 'C.V.',
+        nav_about: 'Sobre mí',
+        nav_contact: 'Contactar',
+        stat_projects: 'Proyectos\nEntregados',
+        stat_clients: 'Clientes\nActivos',
+        stat_years: 'Años de\nExperiencia',
+        hero_sub: 'Desarrollador Digital & Creador de Ecosistemas Interactivos',
+        section_projects: 'Trabajo Seleccionado',
+        section_projects_title: 'Producción & Proyectos',
+        section_photobook: 'Fotografía',
+        section_photobook_title: 'Photobook & Sesiones',
+        section_cv: 'Trayectoria',
+        section_cv_title: 'Experiencia & C.V.',
+        section_about: 'Sobre mí',
+        section_contact: 'Hablemos',
+        contact_title: 'Trabajemos juntos',
+        contact_desc: 'Si tienes un reto complejo que amerite tecnología, buen gusto y velocidad, contáctame directamente.',
+        btn_contact: 'Contáctame',
+        btn_email: 'Enviar Correo',
+        btn_download_cv: 'Descargar C.V. Completo (PDF)',
+        btn_view_projects: 'Ver Proyectos',
+        btn_download_cv_short: 'Descargar C.V.',
+        footer_made: 'Diseñado & Desarrollado con código',
+        footer_rights: '© 2026 Jesus Omar Martinez · Todos los derechos reservados',
+    },
+    en: {
+        nav_projects: 'Projects',
+        nav_photobook: 'Photobook',
+        nav_cv: 'C.V.',
+        nav_about: 'About',
+        nav_contact: 'Contact',
+        stat_projects: 'Projects\nDelivered',
+        stat_clients: 'Active\nClients',
+        stat_years: 'Years of\nExperience',
+        hero_sub: 'Digital Developer & Interactive Ecosystem Creator',
+        section_projects: 'Selected Work',
+        section_projects_title: 'Production & Projects',
+        section_photobook: 'Photography',
+        section_photobook_title: 'Photobook & Sessions',
+        section_cv: 'Career',
+        section_cv_title: 'Experience & C.V.',
+        section_about: 'About Me',
+        section_contact: "Let's Talk",
+        contact_title: "Let's work together",
+        contact_desc: "If you have a complex challenge that requires technology, good taste and speed, contact me directly.",
+        btn_contact: 'Contact Me',
+        btn_email: 'Send Email',
+        btn_download_cv: 'Download Full C.V. (PDF)',
+        btn_view_projects: 'View Projects',
+        btn_download_cv_short: 'Download C.V.',
+        footer_made: 'Designed & Developed with code',
+        footer_rights: '© 2026 Jesus Omar Martinez · All rights reserved',
+    },
+    fr: {
+        nav_projects: 'Projets',
+        nav_photobook: 'Photobook',
+        nav_cv: 'C.V.',
+        nav_about: 'À propos',
+        nav_contact: 'Contact',
+        stat_projects: 'Projets\nLivrés',
+        stat_clients: 'Clients\nActifs',
+        stat_years: "Années d'\nExpérience",
+        hero_sub: 'Développeur Digital & Créateur d\'Écosystèmes Interactifs',
+        section_projects: 'Travail Sélectionné',
+        section_projects_title: 'Production & Projets',
+        section_photobook: 'Photographie',
+        section_photobook_title: 'Photobook & Sessions',
+        section_cv: 'Parcours',
+        section_cv_title: 'Expérience & C.V.',
+        section_about: 'À propos',
+        section_contact: 'Parlons-en',
+        contact_title: 'Travaillons ensemble',
+        contact_desc: 'Si vous avez un défi complexe nécessitant technologie, bon goût et rapidité, contactez-moi directement.',
+        btn_contact: 'Me Contacter',
+        btn_email: 'Envoyer un Email',
+        btn_download_cv: 'Télécharger le C.V. Complet (PDF)',
+        btn_view_projects: 'Voir les Projets',
+        btn_download_cv_short: 'Télécharger C.V.',
+        footer_made: 'Conçu & Développé avec du code',
+        footer_rights: '© 2026 Jesus Omar Martinez · Tous droits réservés',
+    },
+    pt: {
+        nav_projects: 'Projetos',
+        nav_photobook: 'Photobook',
+        nav_cv: 'C.V.',
+        nav_about: 'Sobre mim',
+        nav_contact: 'Contato',
+        stat_projects: 'Projetos\nEntregues',
+        stat_clients: 'Clientes\nAtivos',
+        stat_years: 'Anos de\nExperiência',
+        hero_sub: 'Desenvolvedor Digital & Criador de Ecossistemas Interativos',
+        section_projects: 'Trabalho Selecionado',
+        section_projects_title: 'Produção & Projetos',
+        section_photobook: 'Fotografia',
+        section_photobook_title: 'Photobook & Sessões',
+        section_cv: 'Trajetória',
+        section_cv_title: 'Experiência & C.V.',
+        section_about: 'Sobre Mim',
+        section_contact: 'Vamos Conversar',
+        contact_title: 'Vamos trabalhar juntos',
+        contact_desc: 'Se você tem um desafio complexo que requer tecnologia, bom gosto e velocidade, entre em contato diretamente.',
+        btn_contact: 'Entre em Contato',
+        btn_email: 'Enviar E-mail',
+        btn_download_cv: 'Baixar C.V. Completo (PDF)',
+        btn_view_projects: 'Ver Projetos',
+        btn_download_cv_short: 'Baixar C.V.',
+        footer_made: 'Projetado & Desenvolvido com código',
+        footer_rights: '© 2026 Jesus Omar Martinez · Todos os direitos reservados',
+    }
+};
+
+const LANG_FLAGS = { es: '🇪🇸', en: '🇺🇸', fr: '🇫🇷', pt: '🇧🇷', auto: '🌐' };
+const LANG_LABELS = { es: 'ES', en: 'EN', fr: 'FR', pt: 'PT', auto: 'Auto' };
+
+function detectDeviceLang() {
+    const nav = navigator.language || navigator.userLanguage || 'es';
+    const code = nav.slice(0, 2).toLowerCase();
+    return translations[code] ? code : 'es';
+}
+
+function applyLanguage(lang) {
+    const t = translations[lang] || translations['es'];
+    const htmlRoot = document.getElementById('html-root');
+    if (htmlRoot) htmlRoot.setAttribute('lang', lang);
+
+    // Apply all data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (t[key]) {
+            // Handle stat labels with \n as <br>
+            if (el.tagName === 'SPAN' && el.classList.contains('stat-label')) {
+                el.innerHTML = t[key].replace('\n', '<br>');
+            } else {
+                el.textContent = t[key];
+            }
+        }
+    });
+
+    // Update lang selector display
+    const langCurrent = document.getElementById('lang-current');
+    if (langCurrent) langCurrent.textContent = LANG_LABELS[lang] || lang.toUpperCase();
+
+    // Update active state on options
+    document.querySelectorAll('.lang-option').forEach(opt => {
+        opt.classList.toggle('active', opt.dataset.lang === lang ||
+            (opt.dataset.lang === 'auto' && lang === detectDeviceLang() && !localStorage.getItem('jom_lang')));
+    });
+
+    // Save preference
+    localStorage.setItem('jom_lang', lang === 'auto' ? 'auto' : lang);
+}
+
+function initLangSelector() {
+    const selector = document.getElementById('lang-selector');
+    const btn = document.getElementById('lang-btn');
+    const dropdown = document.getElementById('lang-dropdown');
+    if (!selector || !btn || !dropdown) return;
+
+    // Toggle dropdown
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selector.classList.toggle('open');
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!selector.contains(e.target)) {
+            selector.classList.remove('open');
+        }
+    });
+
+    // Option click
+    document.querySelectorAll('.lang-option').forEach(opt => {
+        opt.addEventListener('click', () => {
+            const lang = opt.dataset.lang;
+            const resolved = lang === 'auto' ? detectDeviceLang() : lang;
+            if (lang === 'auto') localStorage.removeItem('jom_lang');
+            applyLanguage(resolved);
+            // Update current button label for 'auto'
+            const langCurrent = document.getElementById('lang-current');
+            if (langCurrent && lang === 'auto') langCurrent.textContent = '🌐';
+            document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('active'));
+            opt.classList.add('active');
+            selector.classList.remove('open');
+        });
+    });
+
+    // Load saved language
+    const saved = localStorage.getItem('jom_lang');
+    if (saved && saved !== 'auto' && translations[saved]) {
+        applyLanguage(saved);
+    } else if (saved === 'auto') {
+        applyLanguage(detectDeviceLang());
+        document.querySelector('.lang-option[data-lang="auto"]')?.classList.add('active');
+    } else {
+        // Try device language detection on first visit
+        const deviceLang = detectDeviceLang();
+        if (deviceLang !== 'es') {
+            applyLanguage(deviceLang);
+        }
+        // Default stays ES, no need to call applyLanguage
+    }
+}
+
+// Init on DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLangSelector);
+} else {
+    initLangSelector();
+}
+
+})();

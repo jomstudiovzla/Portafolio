@@ -716,3 +716,72 @@ button { cursor: none; }
 /* ─── SELECTION ──────────────────────────────── */
 ::selection { background: rgba(46,196,182,0.3); color: var(--text); }
 
+/* ─── LANGUAGE SELECTOR ──────────────────────── */
+.lang-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+.lang-btn {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    color: var(--muted);
+    padding: 7px 14px;
+    font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    cursor: none;
+}
+.lang-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(46,196,182,0.4); color: var(--accent); }
+.lang-btn svg { flex-shrink: 0; }
+.lang-arrow { transition: transform 0.3s; }
+.lang-selector.open .lang-arrow { transform: rotate(180deg); }
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px;
+    min-width: 160px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.3s var(--ease-out);
+    z-index: 2000;
+}
+.lang-selector.open .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.lang-option {
+    display: flex; align-items: center; gap: 10px;
+    width: 100%;
+    background: none; border: none;
+    color: var(--muted);
+    padding: 9px 12px;
+    font-size: 0.85rem; font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s;
+    cursor: none;
+    text-align: left;
+}
+.lang-option:hover { background: rgba(255,255,255,0.07); color: var(--text); }
+.lang-option.active { color: var(--accent); background: rgba(46,196,182,0.08); }
+.lang-option.active::after {
+    content: '✓';
+    margin-left: auto;
+    font-size: 0.75rem;
+}
+.lang-flag { font-size: 1.1rem; }
+@media (max-width: 768px) {
+    .lang-selector { margin-right: 0; }
+    .lang-dropdown { right: -10px; }
+}
